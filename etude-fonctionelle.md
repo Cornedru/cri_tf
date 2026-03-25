@@ -126,10 +126,10 @@ Ces règles entraînent une **note de 0** si elles ne sont pas respectées :
 
 > **Bloquer** les phases suivantes — à faire ensemble pour valider la base.
 
-- [ ] Créer le socket TCP : `socket()`, `bind()`, `listen()`, `fcntl(O_NONBLOCK)`, `SO_REUSEADDR`
-- [ ] Boucle `poll()` unique : accepter les connexions entrantes
-- [ ] Squelette `Client` : fd, buffer, `recv()` non-bloquant
-- [ ] Test : `nc -C localhost 6667` → connexion brute sans crash
+- [✅] Créer le socket TCP : `socket()`, `bind()`, `listen()`, `fcntl(O_NONBLOCK)`, `SO_REUSEADDR`
+- [✅] Boucle `poll()` unique : accepter les connexions entrantes
+- [✅] Squelette `Client` : fd, buffer, `recv()` non-bloquant
+- [✅] Test : `nc -C localhost 6667` → connexion brute sans crash
 
 ```cpp
 // Vérifier que poll() gère bien EINTR
