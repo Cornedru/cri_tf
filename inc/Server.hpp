@@ -8,9 +8,10 @@
 # include <netinet/in.h>
 # include <poll.h>
 
-class Client;
-class Channel;
-class Message;
+# include "Client.hpp"
+# include "Channel.hpp"
+# include "Message.hpp"
+# include "CommandHandler.hpp"
 
 class Server {
 private:
