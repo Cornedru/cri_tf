@@ -126,10 +126,10 @@ Ces règles entraînent une **note de 0** si elles ne sont pas respectées :
 
 > **Bloquer** les phases suivantes — à faire ensemble pour valider la base.
 
-- [✅] Créer le socket TCP : `socket()`, `bind()`, `listen()`, `fcntl(O_NONBLOCK)`, `SO_REUSEADDR`
-- [✅] Boucle `poll()` unique : accepter les connexions entrantes
-- [✅] Squelette `Client` : fd, buffer, `recv()` non-bloquant
-- [✅] Test : `nc -C localhost 6667` → connexion brute sans crash
+- [x] Créer le socket TCP : `socket()`, `bind()`, `listen()`, `fcntl(O_NONBLOCK)`, `SO_REUSEADDR`
+- [x] Boucle `poll()` unique : accepter les connexions entrantes
+- [x] Squelette `Client` : fd, buffer, `recv()` non-bloquant
+- [x] Test : `nc -C localhost 6667` → connexion brute sans crash
 
 ```cpp
 // Vérifier que poll() gère bien EINTR
@@ -143,9 +143,9 @@ if (n < 0 && errno == EINTR) continue;  // signal reçu, on continue
 
 > **Critique** : gestion des données partielles (test `nc` obligatoire).
 
-- [ ] `Client::extractMessages()` — split sur `\r\n`, buffer partiel conservé
-- [ ] `Message::parse()` — extraction prefix / command / params / trailing
-- [ ] `Server::dispatch()` — routing vers `CommandHandler`
+- [~] `Client::extractMessages()` — split sur `\r\n`, buffer partiel conservé
+- [~] `Message::parse()` — extraction prefix / command / params / trailing
+- [~] `Server::dispatch()` — routing vers `CommandHandler`
 
 **Test obligatoire du sujet :**
 ```bash
